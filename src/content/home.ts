@@ -2,10 +2,10 @@ import { IconKey } from "./icons";
 
 export const HERO = {
   eyebrow: "Duke University · Department of Surgery",
-  title: "testEngineering the future of",
+  title: "Engineering the future of",
   highlight: "trauma care.",
   description:
-    "STAT Lab develops transformative technologies at the intersection of surgery, artificial intelligence, biomaterials, and regenerative medicine to improve outcomes for patients facing traumatic injury.",
+    "STAT Lab develops transformative biomaterials, drug delivery systems, and regenerative therapies to enhance the body’s innate healing response and improve outcomes following traumatic injury.",
   primaryCta: { label: "Explore the research", href: "/research" },
   secondaryCta: { label: "Collaborate with us", href: "/contact" },
 };
