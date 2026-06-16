@@ -30,11 +30,11 @@
     },
     {
       "src": "^/(.*)$",
-      "dest": "/dist/server/server.js"
+      "dest": "/api/server.js"
     }
   ],
   "functions": {
-    "dist/server/server.js": {
+    "api/server.js": {
       "runtime": "nodejs20.x"
     }
   }
