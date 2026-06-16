@@ -24,8 +24,8 @@ function TeamPage() {
     <PageShell>
       <PageHero
         eyebrow="Team"
-        title="A multidisciplinary team operating at the edge of surgery and technology."
-        subtitle="Surgeons, scientists, and engineers united by a single mission: build technologies that change outcomes for injured patients."
+        title="A multidisciplinary team advancing trauma care."
+        subtitle="Surgeons, scientists, engineers, and trainees working together to address unmet challenges in trauma surgery and critical care."
       />
 
       {/* PI */}
@@ -38,7 +38,7 @@ function TeamPage() {
                 <div className="text-xs font-medium uppercase tracking-widest text-cyan-electric/90">
                   Principal Investigator
                 </div>
-                <div className="mt-1 text-sm font-semibold">JFM</div>
+                <div className="mt-1 text-sm font-semibold">Joseph Fernandez-Moure, MD, MS</div>
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@ function TeamPage() {
             ))}
           </div>
           <div className="mt-10 rounded-xl border border-dashed border-border bg-background p-6 text-sm text-muted-foreground">
-            We're actively recruiting postdocs and graduate students at the intersection of
+            We're actively recruiting individuals at the intersection of
             engineering, AI, and surgical science.{" "}
             <a href="/contact" className="font-medium text-primary hover:underline">
               Get in touch →
