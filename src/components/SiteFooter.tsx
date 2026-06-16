@@ -46,7 +46,7 @@ export function SiteFooter() {
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-6 py-5 text-xs text-muted-foreground md:flex-row md:items-center">
           <div>© {new Date().getFullYear()} STAT Lab · Duke University. All rights reserved.</div>
-          <div>Principal Investigator: Joseph Fernandez-Moure, MD, MSCE, FACS</div>
+          <div>Principal Investigator: Joseph Fernandez-Moure, MD, MS </div>
         </div>
       </div>
     </footer>
