@@ -14,24 +14,24 @@ export type TeamLead = {
 };
 
 export const PI: TeamLead = {
-  name: "Joseph Fernandez-Moure, MD, MSCE, FACS",
+  name: "Joseph Fernandez-Moure, MD, MS",
   role: "Principal Investigator · Associate Professor of Surgery",
-  bio: "Trauma and acute care surgeon, scientist, and innovator focused on the convergence of biomaterials, nanotechnology, AI, and regenerative medicine for the care of injured patients. Dr. Fernandez-Moure directs the STAT Lab at Duke University and serves as a translational bridge between the operating room and the bench.",
+  bio: "I am an academic surgeon with a practice in trauma, critical care and acute care surgery with an active research program focused on the development and translation of therapeutic strategies to improve the healing of acute traumatic injuries. My motivation for this works lies in the lack of available therapeutics for acute traumatic wounds which are often left to heal without intervention. Rib fractures exemplify this problem. I want to provide treatment solutions to the trauma patient where none exist. As the principle investigator of the Duke STAT lab my work is focused on enhancing the innate capacity of the body to heal broken bones and acute traumatic wounds through the use of engineered scaffolds, nanomaterials, and drug delivery systems. We are applying biomedical engineering principles to common traumatic injuries and in particular, rib fractures. We lack minimally invasive approaches to rib fracture repair and I have focused my lab on developing therapeutic solutions to this common injury. Using biologically derived materials we have studied the innate immune response to wound healing. As the Medical Director of the Duke Thoracic Injury Program, I have been actively involved in the development of instruments and devices to improve the safety and reduce the invasiveness of surgical approach to thoracic injuries.",
   interests: [
-    "Hemorrhage control nanotechnology",
-    "Regenerative signaling",
-    "AI for clinical decision-making",
-    "Trauma systems",
+    "Interest 1",
+    "Interest 2",
+    "Interest 3",
+    "Interest 4",
   ],
 };
 
 export const MEMBERS: TeamMember[] = [
-  { name: "Senior Scientist", role: "Biomaterials & Nanotechnology", focus: "Nanofiber hemostats" },
-  { name: "Postdoctoral Fellow", role: "Regenerative Signaling", focus: "Exosome biology" },
-  { name: "Clinical AI Lead", role: "AI + Clinical Intelligence", focus: "Multimodal models" },
-  { name: "Senior Engineer", role: "Medical Device Development", focus: "Prototype to validation" },
-  { name: "Research Associate", role: "Trauma Systems Innovation", focus: "Outcomes science" },
-  { name: "Program Manager", role: "Translational Operations", focus: "Portfolio & partnerships" },
-  { name: "Graduate Student", role: "Biomaterials", focus: "Bioactive composites" },
-  { name: "Graduate Student", role: "Regenerative Medicine", focus: "Mechanotransduction" },
+  { name: "Name", role: "Role", focus: "Focus" },
+  { name: "Name", role: "Role", focus: "Focus" },
+  { name: "Name", role: "Role", focus: "Focus" },
+  { name: "Name", role: "Role", focus: "Focus" },
+  { name: "Name", role: "Role", focus: "Focus" },
+  { name: "Name", role: "Role", focus: "Focus" },
+  { name: "Name", role: "Role", focus: "Focus" },
+  { name: "Name", role: "Role", focus: "Focus" },
 ];
