@@ -33,7 +33,11 @@ function TeamPage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-duke-gradient ring-1 ring-inset ring-white/15">
-              <div className="absolute inset-0 bg-grid-faint opacity-[0.08]" />
+  {PI.image ? (
+    <img src={PI.image} alt={PI.name} className="h-full w-full object-cover" />
+  ) : (
+    <div className="absolute inset-0 bg-grid-faint opacity-[0.08]" />
+  )}
               <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white backdrop-blur-md">
                 <div className="text-xs font-medium uppercase tracking-widest text-cyan-electric/90">
                   Principal Investigator
@@ -98,8 +102,12 @@ function TeamPage() {
             {MEMBERS.map((m, idx) => (
               <div key={idx} className="group relative bg-background p-6 transition-colors hover:bg-card">
                 <div className="aspect-square overflow-hidden rounded-lg bg-duke-gradient ring-1 ring-inset ring-white/10">
-                  <div className="h-full w-full bg-grid-faint opacity-20" />
-                </div>
+  {m.image ? (
+    <img src={m.image} alt={m.name} className="h-full w-full object-cover" />
+  ) : (
+    <div className="h-full w-full bg-grid-faint opacity-20" />
+  )}
+</div>
                 <div className="mt-4 text-sm font-semibold tracking-tight">{m.name}</div>
                 <div className="mt-1 text-xs text-muted-foreground">{m.role}</div>
                 <div className="mt-3 text-xs text-primary">{m.focus}</div>
