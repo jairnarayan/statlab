@@ -21,7 +21,7 @@ export function SiteHeader() {
         <Link to="/" className="group flex items-center gap-2.5">
           <span className="relative flex h-8 w-8 items-center justify-center rounded-md bg-duke-gradient">
             <span className="absolute inset-0 rounded-md ring-1 ring-inset ring-white/20" />
-            <span className="text-[11px] font-semibold tracking-tight text-white">ST</span>
+            <img src="/logo.jpg" alt="STAT Lab" className="h-8 w-auto" />
           </span>
           <span className="flex flex-col leading-tight">
             <span className="text-sm font-semibold tracking-tight">STAT Lab</span>
