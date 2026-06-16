@@ -23,15 +23,16 @@ export const PI: TeamLead = {
     "Interest 3",
     "Interest 4",
   ],
+  image: "/images/jfm.jpg"
 };
 
 export const MEMBERS: TeamMember[] = [
-  { name: "Name", role: "Role", focus: "Focus" },
-  { name: "Name", role: "Role", focus: "Focus" },
-  { name: "Name", role: "Role", focus: "Focus" },
-  { name: "Name", role: "Role", focus: "Focus" },
-  { name: "Name", role: "Role", focus: "Focus" },
-  { name: "Name", role: "Role", focus: "Focus" },
-  { name: "Name", role: "Role", focus: "Focus" },
-  { name: "Name", role: "Role", focus: "Focus" },
+  { name: "Name", role: "Role", focus: "Focus", image?: string;},
+  { name: "Name", role: "Role", focus: "Focus", image?: string;},
+  { name: "Name", role: "Role", focus: "Focus", image?: string;},
+  { name: "Name", role: "Role", focus: "Focus", image?: string;},
+  { name: "Name", role: "Role", focus: "Focus", image?: string;},
+  { name: "Name", role: "Role", focus: "Focus", image?: string;},
+  { name: "Name", role: "Role", focus: "Focus", image?: string;},
+  { name: "Name", role: "Role", focus: "Focus", image?: string;},
 ];
