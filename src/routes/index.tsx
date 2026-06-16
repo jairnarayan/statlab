@@ -1,20 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  Brain,
-  Atom,
-  Dna,
-  ActivitySquare,
-  Cpu,
-  BookOpen,
-  Microscope,
-  HeartPulse,
-  Sparkles,
-  FileText,
-  Newspaper,
-} from "lucide-react";
+import { ArrowRight, Sparkles, FileText } from "lucide-react";
 import { NetworkCanvas } from "@/components/NetworkCanvas";
 import { PageShell } from "@/components/PageShell";
+import { HERO, MISSION, CTA, STATS, PILLARS, INNOVATIONS, PIPELINE, HOME_PUBLICATIONS, NEWS, COLLABORATORS } from "@/content";
+import { ICONS } from "@/content/icons";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -22,139 +11,17 @@ export const Route = createFileRoute("/")({
       { title: "STAT Lab — Engineering the Future of Trauma Care | Duke University" },
       {
         name: "description",
-        content:
-          "STAT Lab develops transformative technologies at the intersection of surgery, AI, biomaterials, and regenerative medicine for patients facing traumatic injury.",
+        content: "STAT Lab develops transformative technologies at the intersection of surgery, AI, biomaterials, and regenerative medicine for patients facing traumatic injury.",
       },
       { property: "og:title", content: "STAT Lab — Engineering the Future of Trauma Care" },
       {
         property: "og:description",
-        content:
-          "Translational research at Duke University led by Dr. Joseph Fernandez-Moure.",
+        content: "Translational research at Duke University led by Dr. Joseph Fernandez-Moure.",
       },
     ],
   }),
   component: HomePage,
 });
-
-// Research pillar cards are defined here. Update the title, body, and id fields below
-// to change the homepage buttons and target sections on the Research page.
-const PILLARS = [
-  {
-    id: "ai-clinical-intelligence",
-    icon: Brain,
-    title: "AI + Clinical Intelligence",
-    body: "Predictive models, decision-support, and computer vision for high-acuity trauma and critical care environments.",
-  },
-  {
-    id: "biomaterials-nanotechnology",
-    icon: Atom,
-    title: "Biomaterials + Nanotechnology",
-    body: "Engineered nanomaterials and bioactive scaffolds that accelerate tissue repair after traumatic injury.",
-  },
-  {
-    id: "regenerative-signaling",
-    icon: Dna,
-    title: "Regenerative Signaling",
-    body: "Decoding biological pathways to restore function in bone, soft tissue, and vascular networks.",
-  },
-  {
-    id: "trauma-systems-innovation",
-    icon: ActivitySquare,
-    title: "Trauma Systems Innovation",
-    body: "Rethinking the systems-level architecture of trauma care, from point-of-injury to recovery.",
-  },
-  {
-    id: "medical-device-development",
-    icon: Cpu,
-    title: "Medical Device Development",
-    body: "Designing, prototyping, and validating devices that translate science into the operating room.",
-  },
-  {
-    id: "knowledge-product-development",
-    icon: BookOpen,
-    title: "Knowledge Product Development",
-    body: "Educational platforms and clinical knowledge products that scale expertise across institutions.",
-  },
-] as const;
-
-const INNOVATIONS = [
-  {
-    tag: "Nanomaterial Hemostat",
-    title: "Self-assembling nanofiber matrix for catastrophic hemorrhage",
-    summary:
-      "A next-generation hemostatic platform engineered to control non-compressible bleeding at the point of injury.",
-  },
-  {
-    tag: "AI Triage Engine",
-    title: "Real-time risk stratification for polytrauma",
-    summary:
-      "Multimodal model integrating physiologic, imaging, and contextual data to predict deterioration hours earlier.",
-  },
-  {
-    tag: "Regenerative Scaffold",
-    title: "Bioactive scaffolds for complex soft-tissue reconstruction",
-    summary:
-      "Programmable biomaterials that orchestrate the regenerative cascade after blast and penetrating injury.",
-  },
-] as const;
-
-const PIPELINE = [
-  { label: "Discovery", body: "Hypothesis & mechanism" },
-  { label: "Prototype", body: "Engineering & iteration" },
-  { label: "Validation", body: "Preclinical evidence" },
-  { label: "Translation", body: "Regulatory & manufacturing" },
-  { label: "Clinical Impact", body: "Bedside outcomes" },
-] as const;
-
-const PUBLICATIONS = [
-  {
-    year: "2024",
-    venue: "Nature Biomedical Engineering",
-    title:
-      "Self-propagating nanofiber networks for hemorrhage control in non-compressible torso injury",
-  },
-  {
-    year: "2024",
-    venue: "Annals of Surgery",
-    title:
-      "Multimodal prediction of secondary injury following severe polytrauma",
-  },
-  {
-    year: "2023",
-    venue: "Science Translational Medicine",
-    title:
-      "Engineered exosome signaling restores vascular function after ischemia–reperfusion",
-  },
-] as const;
-
-const NEWS = [
-  {
-    date: "April 2026",
-    kicker: "Grant",
-    title: "STAT Lab awarded DoD CDMRP grant to accelerate hemostatic nanotechnology",
-  },
-  {
-    date: "March 2026",
-    kicker: "Partnership",
-    title: "New translational alliance with Duke Engineering on regenerative biomaterials",
-  },
-  {
-    date: "February 2026",
-    kicker: "Publication",
-    title: "Lab paper on AI-guided trauma triage featured in Nature Biomedical Engineering",
-  },
-] as const;
-
-const COLLABORATORS = [
-  "Duke University School of Medicine",
-  "Pratt School of Engineering",
-  "Duke MEDx",
-  "Duke AI Health",
-  "US Department of Defense",
-  "NIH NIBIB",
-  "Duke Innovation & Entrepreneurship",
-  "Coulter Foundation",
-] as const;
 
 function HomePage() {
   return (
@@ -171,42 +38,35 @@ function HomePage() {
         <div className="relative mx-auto max-w-7xl px-6 pb-28 pt-28 md:pb-40 md:pt-40">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.2em] text-cyan-electric/90 backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-cyan-electric animate-pulse-node" />
-            Duke University · Department of Surgery
+            {HERO.eyebrow}
           </div>
           <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">
-            Engineering the future of{" "}
+            {HERO.title} {" "}
             <span className="bg-gradient-to-r from-white via-[oklch(0.92_0.06_220)] to-[oklch(0.82_0.16_210)] bg-clip-text text-transparent">
-              trauma care.
+              {HERO.highlight}
             </span>
           </h1>
           <p className="mt-6 max-w-2xl text-base text-white/75 md:text-lg">
-            STAT Lab develops transformative technologies at the intersection of surgery,
-            artificial intelligence, biomaterials, and regenerative medicine to improve
-            outcomes for patients facing traumatic injury.
+            {HERO.description}
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Link
-              to="/research"
+              to={HERO.primaryCta.href}
               className="inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-medium text-[oklch(0.16_0.04_264)] transition-transform hover:-translate-y-0.5"
             >
-              Explore the research <ArrowRight size={16} />
+              {HERO.primaryCta.label} <ArrowRight size={16} />
             </Link>
             <Link
-              to="/contact"
+              to={HERO.secondaryCta.href}
               className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-white/5 px-5 py-3 text-sm font-medium text-white backdrop-blur transition-colors hover:bg-white/10"
             >
-              Collaborate with us
+              {HERO.secondaryCta.label}
             </Link>
           </div>
 
           {/* Stat strip */}
           <div className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-white/10 bg-white/5 backdrop-blur md:grid-cols-4">
-            {[
-              ["80+", "Peer-reviewed papers"],
-              ["12", "Active translational projects"],
-              ["$14M", "In active research funding"],
-              ["6", "Issued & pending patents"],
-            ].map(([k, v]) => (
+            {STATS.map(([k, v]) => (
               <div key={v} className="bg-[oklch(0.16_0.04_264)]/40 px-6 py-6">
                 <div className="text-3xl font-semibold tracking-tight text-white">{k}</div>
                 <div className="mt-1 text-xs uppercase tracking-widest text-white/60">{v}</div>
@@ -221,37 +81,23 @@ function HomePage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-              Mission
+              {MISSION.eyebrow}
             </div>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-              Beyond publications — toward platforms, devices, and clinical impact at scale.
+              {MISSION.title}
             </h2>
           </div>
           <div className="space-y-6 text-base leading-relaxed text-muted-foreground lg:col-span-7">
-            <p>
-              The Surgical Technology and Advanced Trauma (STAT) Lab is a translational
-              research and technology development laboratory at Duke University led by
-              Dr. Joseph Fernandez-Moure. We work at the convergence of advanced
-              biomaterials, AI, regenerative biology, and human-centered engineering to
-              address the most consequential unmet needs in trauma, surgery, and critical
-              care.
-            </p>
-            <p>
-              We measure success not in citations alone, but in the technologies,
-              platforms, devices, and knowledge products that move from concept to
-              clinical reality — and the lives improved along the way.
-            </p>
+            {MISSION.description.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
             <div className="flex flex-wrap gap-3 pt-2">
-              {[
-                "Translational surgery",
-                "Human-centered innovation",
-                "Clinical impact at scale",
-              ].map((t) => (
+              {MISSION.tags.map((tag) => (
                 <span
-                  key={t}
+                  key={tag}
                   className="rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground"
                 >
-                  {t}
+                  {tag}
                 </span>
               ))}
             </div>
@@ -279,23 +125,26 @@ function HomePage() {
             </Link>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-            {PILLARS.map((p) => (
-              <Link
-                key={p.title}
-                to="/research"
-                className="group relative block bg-background p-7 transition-colors hover:bg-card"
-                aria-label={`Learn more about ${p.title} on the Research page`}
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-duke-gradient text-white ring-1 ring-inset ring-white/15">
-                  <p.icon size={20} strokeWidth={1.5} />
-                </div>
-                <h3 className="mt-5 text-lg font-semibold tracking-tight">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
-                <div className="mt-6 inline-flex items-center gap-1.5 text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                  Learn more <ArrowRight size={12} />
-                </div>
-              </Link>
-            ))}
+            {PILLARS.map((p) => {
+              const PillarIcon = ICONS[p.icon];
+              return (
+                <Link
+                  key={p.title}
+                  to="/research"
+                  className="group relative block bg-background p-7 transition-colors hover:bg-card"
+                  aria-label={`Learn more about ${p.title} on the Research page`}
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-duke-gradient text-white ring-1 ring-inset ring-white/15">
+                    <PillarIcon size={20} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="mt-5 text-lg font-semibold tracking-tight">{p.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+                  <div className="mt-6 inline-flex items-center gap-1.5 text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                    Learn more <ArrowRight size={12} />
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -398,7 +247,7 @@ function HomePage() {
               </Link>
             </div>
             <ul className="mt-8 divide-y divide-border/70 border-y border-border/70">
-              {PUBLICATIONS.map((p) => (
+              {HOME_PUBLICATIONS.map((p) => (
                 <li key={p.title} className="group flex gap-4 py-5">
                   <FileText size={16} className="mt-1 shrink-0 text-muted-foreground" />
                   <div>
@@ -480,21 +329,18 @@ function HomePage() {
         <div className="relative mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 py-20 text-white md:flex-row md:items-center">
           <div>
             <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-electric/90">
-              Collaborate
+              {CTA.eyebrow}
             </div>
             <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
-              Have a hard problem in trauma, surgery, or critical care?
+              {CTA.title}
             </h2>
-            <p className="mt-3 max-w-2xl text-white/75">
-              We partner with clinicians, scientists, engineers, and industry to
-              translate ideas into devices, platforms, and clinical outcomes.
-            </p>
+            <p className="mt-3 max-w-2xl text-white/75">{CTA.description}</p>
           </div>
           <Link
-            to="/contact"
+            to={CTA.ctaHref}
             className="inline-flex shrink-0 items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-medium text-[oklch(0.16_0.04_264)] transition-transform hover:-translate-y-0.5"
           >
-            Start a conversation <ArrowRight size={16} />
+            {CTA.ctaLabel} <ArrowRight size={16} />
           </Link>
         </div>
       </section>

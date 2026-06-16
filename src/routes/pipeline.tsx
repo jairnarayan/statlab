@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Microscope, Wrench, ShieldCheck, Rocket, HeartPulse } from "lucide-react";
 import { PageShell, PageHero } from "@/components/PageShell";
+import { ICONS } from "@/content/icons";
+import { STAGES, PROJECTS } from "@/content";
 
 export const Route = createFileRoute("/pipeline")({
   head: () => ({
@@ -18,48 +19,6 @@ export const Route = createFileRoute("/pipeline")({
   component: PipelinePage,
 });
 
-const STAGES = [
-  {
-    icon: Microscope,
-    label: "Discovery",
-    body: "Mechanistic insight, unmet need definition, and feasibility — grounded in clinical reality.",
-    artifacts: ["Mechanism", "Hypothesis", "Unmet-need analysis"],
-  },
-  {
-    icon: Wrench,
-    label: "Prototype",
-    body: "Rapid engineering iteration with clinicians, scientists, and engineers in the loop.",
-    artifacts: ["Bench prototype", "Design history", "Bench validation"],
-  },
-  {
-    icon: ShieldCheck,
-    label: "Validation",
-    body: "Preclinical evidence generation aligned with regulatory expectations.",
-    artifacts: ["GLP-compatible studies", "Biocompatibility", "Performance data"],
-  },
-  {
-    icon: Rocket,
-    label: "Translation",
-    body: "Regulatory strategy, IP, manufacturing, and partnerships to enable first-in-human.",
-    artifacts: ["IP portfolio", "Regulatory pathway", "Commercial partner"],
-  },
-  {
-    icon: HeartPulse,
-    label: "Clinical Impact",
-    body: "Real-world deployment, outcomes evidence, and iteration based on clinical learning.",
-    artifacts: ["Outcomes evidence", "Adoption", "Continuous improvement"],
-  },
-] as const;
-
-const PROJECTS = [
-  { name: "Nanofiber hemostat platform", stage: 3 },
-  { name: "AI polytrauma triage engine", stage: 2 },
-  { name: "Bioactive regenerative scaffold", stage: 2 },
-  { name: "Smart wound monitoring system", stage: 1 },
-  { name: "Surgical knowledge product suite", stage: 4 },
-  { name: "Exosome-based vascular therapy", stage: 0 },
-] as const;
-
 function PipelinePage() {
   return (
     <PageShell>
@@ -74,50 +33,53 @@ function PipelinePage() {
           <div className="relative">
             <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-border to-transparent md:left-1/2 md:-translate-x-px" />
             <ol className="space-y-12">
-              {STAGES.map((s, idx) => (
-                <li key={s.label} className="relative md:grid md:grid-cols-2 md:gap-12">
-                  <div
-                    className={
-                      idx % 2 === 0
-                        ? "md:pr-12 md:text-right"
-                        : "md:order-2 md:pl-12"
-                    }
-                  >
+              {STAGES.map((s, idx) => {
+                const Icon = ICONS[s.icon];
+                return (
+                  <li key={s.label} className="relative md:grid md:grid-cols-2 md:gap-12">
                     <div
-                      className={`inline-flex items-center gap-3 ${
-                        idx % 2 === 0 ? "md:flex-row-reverse" : ""
-                      }`}
+                      className={
+                        idx % 2 === 0
+                          ? "md:pr-12 md:text-right"
+                          : "md:order-2 md:pl-12"
+                      }
                     >
-                      <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-duke-gradient text-white ring-1 ring-inset ring-white/15">
-                        <s.icon size={20} strokeWidth={1.5} />
-                      </span>
-                      <span className="font-mono text-xs text-muted-foreground">
-                        Stage 0{idx + 1}
-                      </span>
-                    </div>
-                    <h3 className="mt-4 text-2xl font-semibold tracking-tight">{s.label}</h3>
-                    <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                      {s.body}
-                    </p>
-                    <div
-                      className={`mt-5 flex flex-wrap gap-2 ${
-                        idx % 2 === 0 ? "md:justify-end" : ""
-                      }`}
-                    >
-                      {s.artifacts.map((a) => (
-                        <span
-                          key={a}
-                          className="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-foreground"
-                        >
-                          {a}
+                      <div
+                        className={`inline-flex items-center gap-3 ${
+                          idx % 2 === 0 ? "md:flex-row-reverse" : ""
+                        }`}
+                      >
+                        <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-duke-gradient text-white ring-1 ring-inset ring-white/15">
+                          <Icon size={20} strokeWidth={1.5} />
                         </span>
-                      ))}
+                        <span className="font-mono text-xs text-muted-foreground">
+                          Stage 0{idx + 1}
+                        </span>
+                      </div>
+                      <h3 className="mt-4 text-2xl font-semibold tracking-tight">{s.label}</h3>
+                      <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                        {s.body}
+                      </p>
+                      <div
+                        className={`mt-5 flex flex-wrap gap-2 ${
+                          idx % 2 === 0 ? "md:justify-end" : ""
+                        }`}
+                      >
+                        {s.artifacts.map((a) => (
+                          <span
+                            key={a}
+                            className="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-foreground"
+                          >
+                            {a}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  <div className="hidden md:block" />
-                  <span className="absolute left-6 top-2 h-3 w-3 -translate-x-1/2 rounded-full bg-primary ring-4 ring-background md:left-1/2" />
-                </li>
-              ))}
+                    <div className="hidden md:block" />
+                    <span className="absolute left-6 top-2 h-3 w-3 -translate-x-1/2 rounded-full bg-primary ring-4 ring-background md:left-1/2" />
+                  </li>
+                );
+              })}
             </ol>
           </div>
         </div>

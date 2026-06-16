@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Award, Cpu, HeartPulse, Handshake, GraduationCap, BadgeDollarSign } from "lucide-react";
 import { PageShell, PageHero } from "@/components/PageShell";
+import { ICONS } from "@/content/icons";
+import { METRICS, CATEGORIES, FUNDING_MIX } from "@/content";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -17,61 +18,6 @@ export const Route = createFileRoute("/impact")({
   }),
   component: ImpactPage,
 });
-
-const METRICS = [
-  { value: "$14M", label: "Active research funding" },
-  { value: "6", label: "Issued & pending patents" },
-  { value: "12", label: "Translational programs" },
-  { value: "80+", label: "Peer-reviewed papers" },
-  { value: "4", label: "Industry partners" },
-  { value: "3", label: "Clinical implementations" },
-];
-
-const CATEGORIES = [
-  {
-    icon: Award,
-    title: "Patents",
-    body: "Issued and pending intellectual property across nanomaterial platforms, devices, and clinical AI.",
-    items: ["Self-assembling nanofiber hemostat", "Multimodal trauma triage system", "Bioactive scaffold composition"],
-  },
-  {
-    icon: Cpu,
-    title: "Devices",
-    body: "Prototypes and validated devices engineered for high-acuity surgical environments.",
-    items: ["Hemorrhage control platform", "Smart wound monitor", "Austere-environment instrumentation"],
-  },
-  {
-    icon: HeartPulse,
-    title: "Clinical implementations",
-    body: "Tools and protocols adopted in Duke and partner trauma systems.",
-    items: ["Polytrauma risk dashboard", "Damage-control resuscitation pathway", "Quality improvement registry"],
-  },
-  {
-    icon: Handshake,
-    title: "Industry partnerships",
-    body: "Collaborations that move science into manufacturable, scalable products.",
-    items: ["Medical device manufacturers", "Defense health programs", "Digital health platforms"],
-  },
-  {
-    icon: GraduationCap,
-    title: "Educational products",
-    body: "Knowledge products that scale surgical expertise across institutions.",
-    items: ["Surgical atlas series", "Simulation curricula", "Structured clinical guidelines"],
-  },
-  {
-    icon: BadgeDollarSign,
-    title: "Grants",
-    body: "Federal, foundation, and industry funding powering the lab's translational work.",
-    items: ["NIH NIBIB", "DoD CDMRP", "Coulter Foundation", "Industry sponsored research"],
-  },
-] as const;
-
-const FUNDING_MIX = [
-  { name: "Federal", share: 58, color: "bg-duke" },
-  { name: "Foundation", share: 18, color: "bg-duke-light" },
-  { name: "Industry", share: 16, color: "bg-cyan-electric" },
-  { name: "Institutional", share: 8, color: "bg-teal-surgical" },
-];
 
 function ImpactPage() {
   return (
@@ -98,22 +44,25 @@ function ImpactPage() {
       <section className="border-b border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-7xl px-6 py-20">
           <div className="grid gap-px overflow-hidden rounded-xl border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
-            {CATEGORIES.map((c) => (
-              <div key={c.title} className="bg-background p-7">
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-duke-gradient text-white ring-1 ring-inset ring-white/15">
-                  <c.icon size={20} strokeWidth={1.5} />
+            {CATEGORIES.map((c) => {
+              const Icon = ICONS[c.icon];
+              return (
+                <div key={c.title} className="bg-background p-7">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-duke-gradient text-white ring-1 ring-inset ring-white/15">
+                    <Icon size={20} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="mt-5 text-lg font-semibold tracking-tight">{c.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
+                  <ul className="mt-5 space-y-1.5 text-sm">
+                    {c.items.map((it) => (
+                      <li key={it} className="text-muted-foreground">
+                        — {it}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="mt-5 text-lg font-semibold tracking-tight">{c.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
-                <ul className="mt-5 space-y-1.5 text-sm">
-                  {c.items.map((it) => (
-                    <li key={it} className="text-muted-foreground">
-                      — {it}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

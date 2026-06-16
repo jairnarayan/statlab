@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { MapPin, Mail, Building2, Handshake, GraduationCap, Newspaper } from "lucide-react";
+import { MapPin, Mail, Building2 } from "lucide-react";
 import { PageShell, PageHero } from "@/components/PageShell";
+import { ICONS } from "@/content/icons";
+import { TOPICS, CONTACT_INFO } from "@/content";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -19,22 +21,15 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const TOPICS = [
-  { icon: Handshake, label: "Collaboration" },
-  { icon: GraduationCap, label: "Trainee inquiry" },
-  { icon: Newspaper, label: "Press / media" },
-  { icon: Building2, label: "Industry partnership" },
-] as const;
-
 function ContactPage() {
-  const [topic, setTopic] = useState<string>("Collaboration");
+  const [topic, setTopic] = useState<string>(TOPICS[0].label);
 
   return (
     <PageShell>
       <PageHero
         eyebrow="Contact"
-        title="Let's build the future of trauma care together."
-        subtitle="Reach out to discuss collaborations, partnerships, or opportunities to join the lab."
+        title={CONTACT_INFO.title}
+        subtitle={CONTACT_INFO.subtitle}
       />
 
       <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-12">
@@ -45,9 +40,9 @@ function ContactPage() {
           <h2 className="mt-3 text-2xl font-semibold tracking-tight">Duke University Medical Center</h2>
 
           <div className="mt-8 space-y-5 text-sm">
-            <Info icon={MapPin} title="Address" lines={["Department of Surgery", "Duke University Medical Center", "Durham, NC 27710"]} />
-            <Info icon={Building2} title="Affiliation" lines={["Duke University School of Medicine", "Duke MEDx · Duke AI Health"]} />
-            <Info icon={Mail} title="Email" lines={["statlab@duke.edu"]} />
+            <Info icon={MapPin} title="Address" lines={CONTACT_INFO.location} />
+            <Info icon={Building2} title="Affiliation" lines={CONTACT_INFO.affiliation} />
+            <Info icon={Mail} title="Email" lines={[CONTACT_INFO.email]} />
           </div>
 
           <div className="mt-10 overflow-hidden rounded-2xl border border-border bg-duke-gradient ring-1 ring-inset ring-white/10">
@@ -68,21 +63,24 @@ function ContactPage() {
             <h2 className="mt-3 text-2xl font-semibold tracking-tight">Send the lab a message</h2>
 
             <div className="mt-6 flex flex-wrap gap-2">
-              {TOPICS.map((t) => (
-                <button
-                  key={t.label}
-                  type="button"
-                  onClick={() => setTopic(t.label)}
-                  className={
-                    "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors " +
-                    (topic === t.label
-                      ? "border-primary bg-primary text-primary-foreground"
-                      : "border-border bg-background text-muted-foreground hover:text-foreground")
-                  }
-                >
-                  <t.icon size={12} /> {t.label}
-                </button>
-              ))}
+              {TOPICS.map((t) => {
+                const TopicIcon = ICONS[t.icon];
+                return (
+                  <button
+                    key={t.label}
+                    type="button"
+                    onClick={() => setTopic(t.label)}
+                    className={
+                      "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors " +
+                      (topic === t.label
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "border-border bg-background text-muted-foreground hover:text-foreground")
+                    }
+                  >
+                    <TopicIcon size={12} /> {t.label}
+                  </button>
+                );
+              })}
             </div>
 
             <form
