@@ -16,40 +16,40 @@ export const STAGES: PipelineStage[] = [
   {
     icon: "Microscope",
     label: "Discovery",
-    body: "Mechanistic insight, unmet need definition, and feasibility — grounded in clinical reality.",
+    body: "Defining unmet needs, understanding mechanisms, and identifying opportunities for intervention.",
     artifacts: ["Mechanism", "Hypothesis", "Unmet-need analysis"],
   },
   {
     icon: "Wrench",
     label: "Prototype",
-    body: "Rapid engineering iteration with clinicians, scientists, and engineers in the loop.",
+    body: "Designing and refining technologies through iterative development and testing.",
     artifacts: ["Bench prototype", "Design history", "Bench validation"],
   },
   {
     icon: "ShieldCheck",
     label: "Validation",
-    body: "Preclinical evidence generation aligned with regulatory expectations.",
+    body: "Generating preclinical evidence to evaluate safety and performance.",
     artifacts: ["GLP-compatible studies", "Biocompatibility", "Performance data"],
   },
   {
     icon: "Rocket",
     label: "Translation",
-    body: "Regulatory strategy, IP, manufacturing, and partnerships to enable first-in-human.",
+    body: "Advancing technologies through regulatory, manufacturing, and commercialization pathways.",
     artifacts: ["IP portfolio", "Regulatory pathway", "Commercial partner"],
   },
   {
     icon: "HeartPulse",
     label: "Clinical Impact",
-    body: "Real-world deployment, outcomes evidence, and iteration based on clinical learning.",
+    body: "Implementation in clinical practice and evaluation of real-world outcomes.",
     artifacts: ["Outcomes evidence", "Adoption", "Continuous improvement"],
   },
 ];
 
 export const PROJECTS: ProjectStatus[] = [
-  { name: "Nanofiber hemostat platform", stage: 3 },
-  { name: "AI polytrauma triage engine", stage: 2 },
-  { name: "Bioactive regenerative scaffold", stage: 2 },
-  { name: "Smart wound monitoring system", stage: 1 },
-  { name: "Surgical knowledge product suite", stage: 4 },
-  { name: "Exosome-based vascular therapy", stage: 0 },
+  { name: "Project 1", stage: 3 },
+  { name: "Project 2", stage: 2 },
+  { name: "Project 3", stage: 2 },
+  { name: "Project 4", stage: 1 },
+  { name: "Project 5", stage: 4 },
+  { name: "Project 6", stage: 0 },
 ];
