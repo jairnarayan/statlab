@@ -13,14 +13,14 @@ export const TOPICS: ContactTopic[] = [
 ];
 
 export const CONTACT_INFO = {
-  title: "Let's build the future of trauma care together.",
+  title: "Start a conversation.",
   subtitle: "Reach out to discuss collaborations, partnerships, or opportunities to join the lab.",
   location: [
     "Department of Surgery",
-    "Duke University Medical Center",
+    "Duke University",
     "Durham, NC 27710",
   ],
-  affiliation: ["Duke University School of Medicine", "Duke MEDx · Duke AI Health"],
-  email: "statlab@duke.edu",
+  affiliation: ["Duke University", "Duke University School of Medicine"],
+  email: "joseph.fernandezmoure@duke.edu",
   cityLabel: "Durham, North Carolina",
 };
