@@ -5,39 +5,38 @@ export const HERO = {
   title: "Engineering the future of",
   highlight: "trauma care.",
   description:
-    "STAT Lab develops transformative biomaterials, drug delivery systems, and regenerative therapies to enhance the body’s innate healing response and improve outcomes following traumatic injury.",
+    "The Surgical Technology and Advanced Trauma (STAT) Lab at Duke University, led by Dr. Joseph Fernandez-Moure, develops biomaterials, regenerative therapies, medical devices, and intelligent systems to address unmet challenges in trauma, surgery, and critical care.",
   primaryCta: { label: "Explore the research", href: "/research" },
   secondaryCta: { label: "Collaborate with us", href: "/contact" },
 };
 
 export const MISSION = {
   eyebrow: "Mission",
-  title: "Beyond publications — toward platforms, devices, and clinical impact at scale.",
+  title: "Building what trauma care still lacks.",
   description: [
-    "The Surgical Technology and Advanced Trauma (STAT) Lab is a translational research and technology development laboratory at Duke University led by Dr. Joseph Fernandez-Moure. We work at the convergence of advanced biomaterials, AI, regenerative biology, and human-centered engineering to address the most consequential unmet needs in trauma, surgery, and critical care.",
-    "We measure success not in citations alone, but in the technologies, platforms, devices, and knowledge products that move from concept to clinical reality — and the lives improved along the way.",
+    "STAT Lab identifies unmet needs in trauma surgery and develops technologies to address them."
   ],
   tags: [
-    "Translational surgery",
-    "Human-centered innovation",
-    "Clinical impact at scale",
+    "Clinical Problem Solving",
+    "Surgical Innovation",
+    "Technology Translation",
   ],
 };
 
 export const CTA = {
   eyebrow: "Collaborate",
-  title: "Have a hard problem in trauma, surgery, or critical care?",
+  title: "Interested in working with us?",
   description:
-    "We partner with clinicians, scientists, engineers, and industry to translate ideas into devices, platforms, and clinical outcomes.",
-  ctaLabel: "Start a conversation",
+    "We welcome collaborations across surgery, engineering, industry, and translational research.",
+  ctaLabel: "Get in Touch",
   ctaHref: "/contact",
 };
 
 export const STATS = [
-  ["80+", "Peer-reviewed papers"],
-  ["12", "Active translational projects"],
-  ["$14M", "In active research funding"],
-  ["6", "Issued & pending patents"],
+  ["##", "Peer-reviewed papers"],
+  ["##", "Active translational projects"],
+  ["$##", "In active research funding"],
+  ["##", "Issued & pending patents"],
 ] as const;
 
 export const PILLARS = [
@@ -45,58 +44,58 @@ export const PILLARS = [
     id: "ai-clinical-intelligence",
     icon: "Brain" as IconKey,
     title: "AI + Clinical Intelligence",
-    body: "Predictive models, decision-support, and computer vision for high-acuity trauma and critical care environments.",
+    body: "Machine learning and computer vision tools for trauma and critical care.",
   },
   {
     id: "biomaterials-nanotechnology",
     icon: "Atom" as IconKey,
     title: "Biomaterials + Nanotechnology",
-    body: "Engineered nanomaterials and bioactive scaffolds that accelerate tissue repair after traumatic injury.",
+    body: "Biomaterials, nanomaterials, and drug delivery systems for tissue repair.",
   },
   {
     id: "regenerative-signaling",
     icon: "Dna" as IconKey,
-    title: "Regenerative Signaling",
-    body: "Decoding biological pathways to restore function in bone, soft tissue, and vascular networks.",
+    title: "Regenerative Medicine",
+    body: "Studying biological pathways that drive healing after injury.",
   },
   {
     id: "trauma-systems-innovation",
     icon: "ActivitySquare" as IconKey,
-    title: "Trauma Systems Innovation",
-    body: "Rethinking the systems-level architecture of trauma care, from point-of-injury to recovery.",
+    title: "Trauma Systems",
+    body: "Improving the delivery and organization of trauma care.",
   },
   {
     id: "medical-device-development",
     icon: "Cpu" as IconKey,
-    title: "Medical Device Development",
-    body: "Designing, prototyping, and validating devices that translate science into the operating room.",
+    title: "Medical Devices",
+    body: "Developing devices that address unmet clinical needs.",
   },
   {
     id: "knowledge-product-development",
     icon: "BookOpen" as IconKey,
-    title: "Knowledge Product Development",
-    body: "Educational platforms and clinical knowledge products that scale expertise across institutions.",
+    title: "Education + Knowledge Translation",
+    body: "Creating tools that improve education and clinical decision-making.",
   },
 ] as const;
 
 export const INNOVATIONS = [
   {
-    tag: "Nanomaterial Hemostat",
-    title: "Self-assembling nanofiber matrix for catastrophic hemorrhage",
+    tag: "Innovation 1",
+    title: "Title 1",
     summary:
-      "A next-generation hemostatic platform engineered to control non-compressible bleeding at the point of injury.",
+      "Summary 1",
   },
   {
-    tag: "AI Triage Engine",
-    title: "Real-time risk stratification for polytrauma",
+    tag: "Innovation 2",
+    title: "Title 2",
     summary:
-      "Multimodal model integrating physiologic, imaging, and contextual data to predict deterioration hours earlier.",
+      "Summary 2",
   },
   {
-    tag: "Regenerative Scaffold",
-    title: "Bioactive scaffolds for complex soft-tissue reconstruction",
+    tag: "Innovation 3",
+    title: "Title 3",
     summary:
-      "Programmable biomaterials that orchestrate the regenerative cascade after blast and penetrating injury.",
+      "Summary 3",
   },
 ] as const;
 
@@ -110,49 +109,43 @@ export const PIPELINE = [
 
 export const HOME_PUBLICATIONS = [
   {
-    year: "2024",
-    venue: "Nature Biomedical Engineering",
+    year: "####",
+    venue: "Journal 1",
     title:
-      "Self-propagating nanofiber networks for hemorrhage control in non-compressible torso injury",
+      "Title 1",
   },
   {
-    year: "2024",
-    venue: "Annals of Surgery",
-    title: "Multimodal prediction of secondary injury following severe polytrauma",
+    year: "####",
+    venue: "Journal 2",
+    title: "Title 2",
   },
   {
-    year: "2023",
-    venue: "Science Translational Medicine",
+    year: "####",
+    venue: "Journal 3",
     title:
-      "Engineered exosome signaling restores vascular function after ischemia–reperfusion",
+      "Title 3",
   },
 ] as const;
 
 export const NEWS = [
   {
-    date: "April 2026",
+    date: "Month ####",
     kicker: "Grant",
-    title: "STAT Lab awarded DoD CDMRP grant to accelerate hemostatic nanotechnology",
+    title: "Title 1",
   },
   {
-    date: "March 2026",
+    date: "Month ####",
     kicker: "Partnership",
-    title: "New translational alliance with Duke Engineering on regenerative biomaterials",
+    title: "Title 2",
   },
   {
-    date: "February 2026",
+    date: "Month ####",
     kicker: "Publication",
-    title: "Lab paper on AI-guided trauma triage featured in Nature Biomedical Engineering",
+    title: "Title 3",
   },
 ] as const;
 
 export const COLLABORATORS = [
+  "Duke University",
   "Duke University School of Medicine",
-  "Pratt School of Engineering",
-  "Duke MEDx",
-  "Duke AI Health",
-  "US Department of Defense",
-  "NIH NIBIB",
-  "Duke Innovation & Entrepreneurship",
-  "Coulter Foundation",
 ] as const;
