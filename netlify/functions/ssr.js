@@ -1,11 +1,27 @@
+import serverModule from '../../dist/server/server.js';
+
+function getServerExport(module) {
+  let current = module;
+  for (let depth = 0; depth < 10; depth += 1) {
+    if (current?.fetch) {
+      return current;
+    }
+    if (current?.default && current.default !== current) {
+      current = current.default;
+      continue;
+    }
+    break;
+  }
+  throw new Error('Unable to resolve SSR server export from module');
+}
+
 export async function handler(event, context) {
   try {
     const path = event.path || '/';
     const search = event.rawQueryString ? `?${event.rawQueryString}` : '';
     const url = new URL(`${path}${search}`, `https://${event.headers?.host || 'example.com'}`);
 
-    const serverModule = await import('../../dist/server/server.js');
-    const server = serverModule.default ?? serverModule;
+    const server = getServerExport(serverModule);
 
     const body = event.body && event.isBase64Encoded
       ? Buffer.from(event.body, 'base64')
