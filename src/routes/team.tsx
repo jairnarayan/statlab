@@ -39,7 +39,7 @@ function TeamPage() {
     <div className="absolute inset-0 bg-grid-faint opacity-[0.08]" />
   )}
               <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white backdrop-blur-md">
-                <div className="text-xs font-medium uppercase tracking-widest text-cyan-electric/90">
+                <div className="text-xs font-medium uppercase tracking-widest text-blue-900">
                   Principal Investigator
                 </div>
                 <div className="mt-1 text-sm font-semibold">Joseph Fernandez-Moure, MD, MS</div>
@@ -68,25 +68,33 @@ function TeamPage() {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-3 py-2 text-sm font-medium hover:bg-secondary"
-                href="#"
-              >
-                <GraduationCap size={14} /> Duke profile <ExternalLink size={12} />
-              </a>
-              <a
-                className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-3 py-2 text-sm font-medium hover:bg-secondary"
-                href="#"
-              >
-                <BookOpen size={14} /> Publications <ExternalLink size={12} />
-              </a>
-              <a
-                className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-3 py-2 text-sm font-medium hover:bg-secondary"
-                href="#"
-              >
-                <Linkedin size={14} /> LinkedIn <ExternalLink size={12} />
-              </a>
-            </div>
+  <a
+    className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-3 py-2 text-sm font-medium hover:bg-secondary"
+    href="https://scholars.duke.edu/person/Joseph.Fernandez-Moure/research"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <GraduationCap size={14} /> Duke profile <ExternalLink size={12} />
+  </a>
+
+  <a
+    className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-3 py-2 text-sm font-medium hover:bg-secondary"
+    href="https://scholar.google.com/citations?user=g3Odq1sAAAAJ&hl=en"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <BookOpen size={14} /> Publications <ExternalLink size={12} />
+  </a>
+
+  <a
+    className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-3 py-2 text-sm font-medium hover:bg-secondary"
+    href="https://www.linkedin.com/in/fernandez-moure-joseph-1a045739/"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <Linkedin size={14} /> LinkedIn <ExternalLink size={12} />
+  </a>
+</div>
           </div>
         </div>
       </section>
