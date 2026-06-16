@@ -7,7 +7,7 @@ export function SiteFooter() {
         <div className="lg:col-span-2">
           <div className="flex items-center gap-2.5">
             <span className="flex h-8 w-8 items-center justify-center rounded-md bg-duke-gradient">
-              <span className="text-[11px] font-semibold text-white">ST</span>
+              <img src="/logo.svg" alt="STAT Lab" className="h-8 w-auto" />
             </span>
             <div className="leading-tight">
               <div className="text-sm font-semibold">Surgical Technology &amp; Advanced Trauma Lab</div>
