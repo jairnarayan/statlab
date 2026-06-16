@@ -1,0 +1,181 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Inter", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-duke: var(--duke);
+  --color-duke-deep: var(--duke-deep);
+  --color-duke-light: var(--duke-light);
+  --color-cyan-electric: var(--cyan-electric);
+  --color-teal-surgical: var(--teal-surgical);
+  --color-silver: var(--silver);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Duke palette */
+  --duke: oklch(0.31 0.13 264);          /* #012169 Duke Blue */
+  --duke-deep: oklch(0.20 0.10 264);     /* deeper navy */
+  --duke-light: oklch(0.46 0.14 258);    /* lighter Duke */
+  --cyan-electric: oklch(0.82 0.16 210); /* electric cyan */
+  --teal-surgical: oklch(0.74 0.11 195); /* surgical teal */
+  --silver: oklch(0.85 0.01 250);        /* metallic silver */
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.16 0.04 264);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.16 0.04 264);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.16 0.04 264);
+  --primary: var(--duke);
+  --primary-foreground: oklch(0.98 0.005 250);
+  --secondary: oklch(0.96 0.01 250);
+  --secondary-foreground: var(--duke-deep);
+  --muted: oklch(0.97 0.008 250);
+  --muted-foreground: oklch(0.48 0.03 258);
+  --accent: oklch(0.95 0.03 220);
+  --accent-foreground: var(--duke-deep);
+  --destructive: oklch(0.58 0.22 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.92 0.01 250);
+  --input: oklch(0.92 0.01 250);
+  --ring: var(--duke-light);
+}
+
+.dark {
+  --background: oklch(0.12 0.03 264);
+  --foreground: oklch(0.97 0.005 250);
+  --card: oklch(0.16 0.04 264);
+  --card-foreground: oklch(0.97 0.005 250);
+  --popover: oklch(0.16 0.04 264);
+  --popover-foreground: oklch(0.97 0.005 250);
+  --primary: oklch(0.70 0.14 230);
+  --primary-foreground: oklch(0.12 0.03 264);
+  --secondary: oklch(0.22 0.05 264);
+  --secondary-foreground: oklch(0.97 0.005 250);
+  --muted: oklch(0.20 0.04 264);
+  --muted-foreground: oklch(0.68 0.03 250);
+  --accent: oklch(0.24 0.06 230);
+  --accent-foreground: oklch(0.97 0.005 250);
+  --destructive: oklch(0.65 0.20 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: var(--cyan-electric);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "cv11", "ss01", "ss03";
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+}
+
+/* === Gradients & surfaces === */
+@utility bg-duke-gradient {
+  background-image: linear-gradient(135deg, var(--duke-deep) 0%, var(--duke) 50%, var(--duke-light) 100%);
+}
+@utility bg-mesh-duke {
+  background-color: var(--duke-deep);
+  background-image:
+    radial-gradient(at 18% 22%, color-mix(in oklab, var(--cyan-electric) 35%, transparent) 0px, transparent 50%),
+    radial-gradient(at 82% 12%, color-mix(in oklab, var(--teal-surgical) 30%, transparent) 0px, transparent 55%),
+    radial-gradient(at 50% 95%, color-mix(in oklab, var(--duke-light) 60%, transparent) 0px, transparent 60%);
+}
+@utility bg-grid-faint {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--foreground) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--foreground) 5%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+@utility text-gradient-duke {
+  background-image: linear-gradient(135deg, var(--duke) 0%, var(--cyan-electric) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility ring-glow {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--cyan-electric) 30%, transparent),
+    0 10px 40px -10px color-mix(in oklab, var(--duke) 40%, transparent);
+}
+@utility shadow-elevated {
+  box-shadow:
+    0 1px 0 0 color-mix(in oklab, var(--foreground) 4%, transparent),
+    0 24px 48px -24px color-mix(in oklab, var(--duke) 25%, transparent);
+}
+
+/* === Animations === */
+@keyframes pulse-node {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+@keyframes flow-line {
+  0% { stroke-dashoffset: 200; opacity: 0; }
+  20% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(8px, -10px); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@utility animate-pulse-node { animation: pulse-node 3.2s ease-in-out infinite; }
+@utility animate-flow-line { animation: flow-line 4s linear infinite; }
+@utility animate-drift { animation: drift 9s ease-in-out infinite; }
+@utility animate-fade-up { animation: fade-up 0.7s ease-out both; }
