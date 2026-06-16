@@ -23,7 +23,7 @@ export const PI: TeamLead = {
     "Interest 3",
     "Interest 4",
   ],
-  image: "/images/jfm.jpg",
+  image: "/jfm.jpg",
 };
 
 export const MEMBERS: TeamMember[] = [
