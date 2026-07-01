@@ -26,7 +26,7 @@ function TeamPage() {
         eyebrow="Team"
         title="A multidisciplinary team operating at the edge of surgery and technology."
         subtitle="Surgeons, scientists, and engineers united by a single mission: build technologies that change outcomes for injured patients."
-        imageSrc="/team-hero.jpg"
+        imageSrc="/team-hero.jpeg"
         imageAlt="STAT Lab team"
       />
 
